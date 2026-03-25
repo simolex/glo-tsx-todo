@@ -1,10 +1,10 @@
-import './Header.scss'
+import styles from './Header.module.scss'
 
 export const Header = ()=>{
     return(
-        <header className="header">
-            <div className="header-container">
-                <a href="/" >ToDo</a>
+        <header className={styles.header}>
+            <div className={styles.container}>
+                <a href="/" className={styles.link}>ToDo</a>
             </div>
         </header> 
     )

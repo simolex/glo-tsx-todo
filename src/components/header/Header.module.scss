@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.header .header-container{
+.container{
     max-width: 97%;
     width: 100%;
     margin: 0 auto;
@@ -18,12 +18,12 @@
     justify-content: center;
 }
 
-.header .header-container a {
+.link{
     text-decoration: none;
     padding: 10px;
     color: #fff;
 }
 
-.header .header-container a.active{
+.active{
     color: #ffffff33;
 }
