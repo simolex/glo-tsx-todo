@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, SubmitEvent, useState } from 'react'
 import './Form.scss'
 
 interface FormProps {
@@ -10,11 +10,12 @@ export const Form = (props: FormProps) => {
 
     const [text, setText] = useState<string>('')
 
-    const formSubmit = () => {
+    const formSubmit = (e: SubmitEvent<HTMLFormElement>) => {
         if (text) {
             createNewTodo(text)
             setText('')
         }
+        e.preventDefault()
     }
 
     const changeText = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,11 +1,11 @@
 import { ListItem } from "../components/ListItem/ListItem"
 import { Todo } from "../models/todo-item"
 
-interface HomePageProps {
+interface ViewListProps {
     todos: Todo[]
 }
 
-export const HomePage = (props: HomePageProps) => {
+export const ViewList = (props: ViewListProps) => {
     const { todos } = props
     return (
         <div className="container">

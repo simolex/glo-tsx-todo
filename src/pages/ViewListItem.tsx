@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Todo } from "../models/todo-item"
 
-interface ItemDescriptionProps {
+interface ViewListItemProps {
     todos: Todo[]
 }
-export const ItemDescription = (props: ItemDescriptionProps) => {
+export const ViewListItem = (props: ViewListItemProps) => {
     const { id } = useParams()
     const navigate = useNavigate()
     const [todo, setTodo] = useState<Todo>()
