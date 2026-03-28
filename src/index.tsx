@@ -4,8 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { router } from './route';
 import { store } from './store'
-import './assets/scss/normalize.scss';
-import './assets/scss/style.scss';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,6 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <Provider store={store}>
+      <GlobalStyle />
       <RouterProvider router={router} />
     </Provider>
   </StrictMode>

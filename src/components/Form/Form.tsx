@@ -1,5 +1,6 @@
 import { ChangeEvent, SubmitEvent, useState } from 'react'
-import './Form.scss'
+import { FormBlock, FormButton, FormInput, FormLabel, FormWrapper } from './Form.styled';
+import ButtonIcon from '../../assets/images/plus.png'
 
 interface FormProps {
     createNewTodo: Function
@@ -22,13 +23,13 @@ export const Form = (props: FormProps) => {
         setText(e.target.value)
     }
     return (
-        <div className="form-wrapper">
-            <form action="#" onSubmit={formSubmit}>
-                <label>
-                    <input type="text" onChange={changeText} value={text} />
-                    <button></button>
-                </label>
-            </form>
-        </div>
+        <FormWrapper>
+            <FormBlock action="#" onSubmit={formSubmit}>
+                <FormLabel>
+                    <FormInput type="text" onChange={changeText} value={text} />
+                    <FormButton icon={ButtonIcon} />
+                </FormLabel>
+            </FormBlock>
+        </FormWrapper>
     )
 }

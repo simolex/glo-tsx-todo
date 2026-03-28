@@ -1,7 +1,10 @@
 import { Todo } from '../../../models/todo-item'
+import { ToDoItem, ToDoListButton, ToDoListButtons, ToDoSpan } from './ToDoListItem.styled'
 import './ToDoListItem.scss'
 
-
+import TrashIcon from '../../../assets/images/trash.png'
+import CheckIcon from '../../../assets/images/check.png'
+import UncheckIcon from '../../../assets/images/uncheck.png'
 
 interface ToDoListItemProps {
     toDoItem: Todo,
@@ -15,12 +18,12 @@ export const ToDoListItem = (props: ToDoListItemProps) => {
     const { text, isDone } = toDoItem
 
     return (
-        <li className="todo-list-item__wrapper">
-            <span>{text}</span>
-            <div className="todo-list-item__buttons">
-                <button className="btn-trash" onClick={() => deleteTodo(toDoItem)}></button>
-                <button className={isDone ? "btn-check" : "btn-uncheck"} onClick={() => updateTodo(toDoItem)}></button>
-            </div>
-        </li>
+        <ToDoItem>
+            <ToDoSpan>{text}</ToDoSpan>
+            <ToDoListButtons>
+                <ToDoListButton icon={TrashIcon} onClick={() => deleteTodo(toDoItem)}></ToDoListButton>
+                <ToDoListButton icon={isDone ? CheckIcon : UncheckIcon} onClick={() => updateTodo(toDoItem)}></ToDoListButton>
+            </ToDoListButtons>
+        </ToDoItem>
     )
 }
